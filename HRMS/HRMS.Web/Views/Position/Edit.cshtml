@@ -1,0 +1,45 @@
+﻿@model PositionViewModel
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<h3>Position Edit Form</h3>
+<form action="/position/update" method="post">
+    <div class="mb-3">
+        <input type="hidden" name="Id" value="@Model.Id" /> <!--for updat process-->
+
+        <label for="code" class="form-label">Code</label>
+        <input type="text" class="form-control" name="Code" id="txtCode" placeholder="type position code in here" required value="@Model.Code" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" name="Description" id="txtDescription" placeholder="type description in here" required value="@Model.Description" >
+    </div>
+
+    <div class="mb-3">
+        <label for="level" class="form-label">Level</label>
+        <input type="number" class="form-control" name="Level" id="txtLevel" placeholder="type level in here" value="@Model.Level">
+    </div>
+
+    <button type="submit" class="btn btn-success" id="btnEdit">Update</button>
+    <button type="reset" class="btn btn-primary">Cancel</button>
+</form>
+
+<script>
+    $(document).ready(function () {
+        //initially disable the entry button
+        $('#btnEdit').attr('disabled', true);
+        //function defination
+        function toggleEntryButton() {
+            if ($('#txtCode').val().length != 0 && $('#txtDescription').val().length != 0) {
+                $('#btnEdit').attr('disabled', false);
+            } else {
+                $('#btnEdit').attr('disabled', true);
+            }
+        }
+
+        $('#txtCode, #txtDescription, #txtLevel').keyup(function () {
+            toggleEntryButton();
+        });
+    });
+</script>
