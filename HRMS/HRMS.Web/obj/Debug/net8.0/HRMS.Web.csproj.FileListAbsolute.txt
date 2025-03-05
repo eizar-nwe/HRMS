@@ -142,3 +142,4 @@ D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.S
 D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\EWAD7\Project\HRMS\HRMS.Web\obj\Debug\net8.0\HRMS.Web.csproj.AssemblyReference.cache
 D:\EWAD7\Project\HRMS\HRMS.Web\obj\Debug\net8.0\HRMS.Web.csproj.Up2Date
+D:\EWAD7\Project\HRMS\HRMS.Web\obj\Debug\net8.0\HRMS.Web.sourcelink.json

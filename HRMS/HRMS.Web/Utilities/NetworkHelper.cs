@@ -6,7 +6,7 @@ namespace HRMS.Web.Utilities
 {
     public static class NetworkHelper
     {
-        public static async Task<string> GetIpAddressAsync()
+        public static async Task<string> GetIpAddressAsnyc()
         {
             string ip = "unknow";
             string url = "https://ipinfo.io/ip"; //"https://api.ipify.org";

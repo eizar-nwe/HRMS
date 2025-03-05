@@ -18,12 +18,36 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\EWAD7\Project\HRMS\HRMS.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/EWAD7/Project/HRMS/HRMS.Web/Views/DailyAttendance/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlBdHRlbmRhbmNlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWAD7/Project/HRMS/HRMS.Web/Views/DailyAttendance/Entry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlBdHRlbmRhbmNlXEVudHJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWAD7/Project/HRMS/HRMS.Web/Views/DailyAttendance/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlBdHRlbmRhbmNlXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWAD7/Project/HRMS/HRMS.Web/Views/Department/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/EWAD7/Project/HRMS/HRMS.Web/Views/Department/Entry.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxFbnRyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/EWAD7/Project/HRMS/HRMS.Web/Views/Department/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWAD7/Project/HRMS/HRMS.Web/Views/Employee/Entry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRW50cnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWAD7/Project/HRMS/HRMS.Web/Views/Employee/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/EWAD7/Project/HRMS/HRMS.Web/Views/Home/Index.cshtml]

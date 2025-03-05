@@ -1,0 +1,117 @@
+﻿@model EmployeeViewModel
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<h3>Employee Entry Form</h3>
+<form action="/employee/entry" method="post">
+    <div class="mb-3">
+        <label for="code" class="form-label">Code</label>
+        <input type="text" class="form-control" name="Code" id="txtCode" placeholder="type employee code in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="Name" id="txtName" placeholder="type name in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" name="Email" id="txtEmail" placeholder="type Email in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Gender" value="M" checked>
+            <label class="form-check-label">Male</label>            
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Gender" value="F">
+            <label class="form-check-label">Female</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Gender" value="O">
+            <label class="form-check-label">Others</label>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="dob" class="form-label">DOB</label>
+        <input type="date" class="form-control" name="DOB" id="txtDOB" placeholder="type DOB in here" required max="@DateTime.Now.ToString("yyyy-MM-dd")">
+    </div>
+
+    <div class="mb-3">
+        <label for="doe" class="form-label">DOE</label>
+        <input type="date" class="form-control" name="DOE" id="txtDOE" placeholder="type DOE in here" required>
+    </div>
+
+    <div class="mb-3">        
+        <label for="Department" class="form-label">Department</label>
+        <select class="form-select" name="DepartmentId" required>
+        <option selected>[select one]</option>
+            @foreach(var department in Model.DepartmentViewModels)
+            {
+                <option value="@department.Id">@department.Code</option>
+            }            
+         </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="Position" class="form-label">Position</label>
+        <select class="form-select" name="PositionId" required>
+            <option selected>[select one]</option>
+            @foreach (var position in Model.PositionViewModels)
+            {
+                <option value="@position.Id">@position.Code</option>
+            }
+        </select>
+    </div>
+    
+    <div class="mb-3">
+        <label for="dor" class="form-label">DOR</label>
+        <input type="date" class="form-control" name="DOR" id="txtDOR" placeholder="type DOR in here">
+    </div>
+
+    <div class="mb-3">        
+        <label for="address" class="form-label">Address</label>
+        <input type="text" class="form-control" name="Address" placeholder="type Address in here">
+    </div>
+
+    <div class="mb-3">        
+        <label for="basicSalary" class="form-label">BasicSalary</label>
+        <input type="number" class="form-control" name="BasicSalary" placeholder="type BasicSalary in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" class="form-control" name="Phone" placeholder="type Phone in here" required>
+    </div>
+
+    <button type="submit" class="btn btn-success" id="btnEntry">Entry</button>
+    <button type="reset" class="btn btn-primary">Cancel</button>
+</form>
+
+<script>
+    $(document).ready(function () {
+        //initially disable the entry button
+        $('#btnEntry').attr('disabled', true);
+        //function defination
+        function toggleEntryButton() {
+            if ($('#txtCode').val().length != 0 && $('#txtName').val().length != 0) {
+                $('#btnEntry').attr('disabled', false);
+            } else {
+                $('#btnEntry').attr('disabled', true);
+            }
+        }
+
+        $('#txtCode, #txtName').keyup(function () {
+            toggleEntryButton();
+        });
+    });
+
+    // document.addEventListener('DOMContentLoaded', function () {
+
+    // });
+</script>

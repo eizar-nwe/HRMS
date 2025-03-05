@@ -1,0 +1,43 @@
+﻿@model DepartmentViewModel
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<h3>Department Edit Form</h3>
+
+<form action="/Department/Update" method="post">
+    <div class="mb-3">
+
+        <input type="hidden" name="Id" value="@Model.Id"/>
+
+        <label for="code" class="form-label">Code</label>
+        <input type="text" class="form-control" name="code" id="txtCode" placeholder="type department code in here" value="@Model.Code">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" name="description" id="txtDesc" placeholder="type department description in here" value="@Model.Description">
+    </div>
+    <div class="mb-3">
+        <label for="ExtensionPhone" class="form-label">ExtensionPhone</label>
+        <input type="text" class="form-control" name="ExtensionPhone" placeholder="type department ExtensionPhone in here" value="@Model.ExtensionPhone">
+    </div>
+    <button type="submit" class="btn btn-success" id="btnEntry">Entry</button>
+    <button type="reset" class="btn btn-primary">Cancel</button>
+</form>
+
+<script>
+    $(document).ready(function () {
+        
+        //function defination
+        function toggleEntryButton() {
+            if ($('#txtCode').val().length != 0 && $('#txtDesc').val().length != 0) {
+                $('#btnEntry').attr('disabled', false);
+            } else {
+                $('#btnEntry').attr('disabled', true);
+            }
+        }
+
+        $('#txtCode, #txtDesc').keyup(function () {
+            toggleEntryButton();
+        });
+    });
+</script>

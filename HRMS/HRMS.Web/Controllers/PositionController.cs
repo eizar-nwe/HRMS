@@ -37,7 +37,7 @@ namespace HRMS.Web.Controllers
                     CreatedAt = DateTime.Now,
                     CreatedBy = "system",
                     IsActive = true,
-                    Ip =await NetworkHelper.GetIpAddressAsync()
+                    Ip =await NetworkHelper.GetIpAddressAsnyc()
                 };
 
                 _db.Positions.Add(positionEntity); //adding the record to the context
@@ -116,7 +116,7 @@ namespace HRMS.Web.Controllers
                     existingPosition.Level = positionVM.Level;
                     existingPosition.UpdatedAt = DateTime.Now;
                     existingPosition.UpdatedBy = "system";
-                    existingPosition.Ip = await NetworkHelper.GetIpAddressAsync();
+                    existingPosition.Ip = await NetworkHelper.GetIpAddressAsnyc();
                 }
                 _db.Positions.Update(existingPosition); //updating the record to the context
                 _db.SaveChanges(); //saving the data to the database in here

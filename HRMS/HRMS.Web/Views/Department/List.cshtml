@@ -1,7 +1,8 @@
 ﻿@model IList<DepartmentViewModel>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 <h1>Department List Information</h1>
-@if(TempData["Msg"] !=null && !(Convert.ToBoolean(TempData["IsErrorOccur"])))
+@if (TempData["Msg"] != null && !(Convert.ToBoolean(TempData["IsErrorOccur"])))
 {
     <div class="alert alert-success" role="alert">
         <span>@TempData["Msg"]</span>
@@ -14,23 +15,36 @@ else @if (TempData["Msg"] != null && (Convert.ToBoolean(TempData["IsErrorOccur"]
     </div>
 }
 
-<table class="table">
+<table class="table" id="DeptTable">
     <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Code</th>
             <th scope="col">Description</th>
             <th scope="col">Extension Phone</th>
+            <th scope="col">Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var item in Model){
+        @foreach (var item in Model)
+        {
             <tr>
-                <th scope="row">@(Model.IndexOf(item)+1)</th>
+                <th scope="row">@(Model.IndexOf(item) + 1)</th>
                 <td>@item.Code</td>
                 <td>@item.Description</td>
                 <td>@item.ExtensionPhone</td>
+                <td>
+                    <a href="/department/edit?id=@item.Id" class="btn btn-success" role="button">Edit</a>
+                    <a href="/department/delete?id=@item.Id" class="btn btn-danger" role="button" onclick="return confirm('Are you sure to delete this record?')">Delete</a>
+                </td>
             </tr>
-        }              
+        }
     </tbody>
 </table>
+
+<script>
+    $(document).ready(function () {
+        $('#DeptTable').DataTable();
+    });
+</script>
+
