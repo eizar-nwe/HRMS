@@ -12,5 +12,6 @@ namespace HRMS.Web.DAO {
         public DbSet<DepartmentEntity> Departments { get; set; }
         public DbSet<EmployeeEntity> Employees { get; set; }
         public DbSet<DailyAttendanceEntity> DailyAttendance { get; set; }
+        public DbSet<AttendancePolicyEntity> AttendancePolicy { get; set; }
     }
 }

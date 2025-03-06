@@ -1,0 +1,55 @@
+﻿@model AttendancePolicyViewModel
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<h3>Attendance Policy Edit Form</h3>
+
+<form action="/AttendancePolicy/update" method="post">
+    <div class="mb-3">
+        <input type="hidden" name="Id" value="@Model.Id" />
+
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="txtName" name="Name" placeholder="enter Name in here" required value="@Model.Name">
+    </div>
+
+    <div class="mb-3">
+        <label for="NumberOfLateTime" class="form-label">Number Of Late Time</label>
+        <input type="number" class="form-control" id="txtNumLateTime" name="NumberOfLateTime" placeholder="enter NumberOfLateTime in here" required value="@Model.NumberOfLateTime">
+    </div>
+
+    <div class="mb-3">
+        <label for="NumberOfEarlyOutTime" class="form-label">Number Of Early Out Time</label>
+        <input type="number" class="form-control" id="txtNumEarlyOutTime" name="NumberOfEarlyOutTime" placeholder="enter NumberOfEarlyOutTime in here" required value="@Model.NumberOfEarlyOutTime">
+    </div>
+
+    <div class="mb-3">
+        <label for="DeductionInAmount" class="form-label">Deduction In Amount</label>
+        <input type="number" class="form-control" id="txtDeductInAmt" name="DeductionInAmount" placeholder="enter DeductionInAmount in here" required value="@Model.DeductionInAmount">
+    </div>
+
+    <div class="mb-3">
+        <label for="DeductionInDay" class="form-label">Deduction In Day</label>
+        <input type="number" class="form-control" id="txtDeductInDay" name="DeductionInDay" placeholder="enter DeductionInDay in here" required value="@Model.DeductionInDay">
+    </div>
+
+    <button type="submit" class="btn btn-success" id="btnEntry">Entry</button>
+    <button type="reset" class="btn btn-primary">Cancel</button>
+</form>
+
+<script>
+    $(document).ready(function () {
+        
+        function toggleEntryButton() {
+            if ($("#txtName").val().length != 0) {
+                $("#btnEntry").attr('disabled', false);
+            } else {
+                $("#btnEntry").attr('disabled', true);
+            }
+        }
+
+        $('#txtName').keyup(function () {
+            toggleEntryButton();
+        });
+    });
+
+</script>

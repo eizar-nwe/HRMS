@@ -18,6 +18,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\EWAD7\Project\HRMS\HRMS.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/EWAD7/Project/HRMS/HRMS.Web/Views/AttendancePolicy/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZVBvbGljeVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWAD7/Project/HRMS/HRMS.Web/Views/AttendancePolicy/Entry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZVBvbGljeVxFbnRyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWAD7/Project/HRMS/HRMS.Web/Views/AttendancePolicy/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZVBvbGljeVxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/EWAD7/Project/HRMS/HRMS.Web/Views/DailyAttendance/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlBdHRlbmRhbmNlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

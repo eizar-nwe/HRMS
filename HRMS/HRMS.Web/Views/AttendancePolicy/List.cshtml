@@ -1,0 +1,56 @@
+﻿@model IList<AttendancePolicyViewModel>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<h1>Attendance Policy List Information</h1>
+
+@if (TempData["Msg"] != null && !Convert.ToBoolean(TempData["IsErrorOccur"]))
+{
+    <div class="alert alert-success" role="alert">
+        <span>@TempData["Msg"]</span>
+    </div>
+}
+else if (TempData["Msg"] != null && Convert.ToBoolean(TempData["IsErrorOccur"]))
+{
+    <div class="alert alert-danger" role="alert">
+        <span>@TempData["Msg"]</span>
+    </div>
+}
+
+<table class="table" id="AttendPolicyTable">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Number Of Late Time</th>
+            <th scope="col">Number of Early Out Time</th>
+            <th scope="col">Deduction In Amount</th>
+            <th scope="col">Deduction In Day</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <th scope="row">@(Model.IndexOf(item) +1)</th>
+                <td>@item.Name</td>
+                <td>@item.NumberOfLateTime</td>
+                <td>@item.NumberOfEarlyOutTime</td>
+                <td>@item.DeductionInAmount</td>
+                <td>@item.DeductionInDay</td>
+                <td>
+                    <a href="/AttendancePolicy/edit?id=@item.Id" class="btn btn-success" role="button">Edit</a>
+                    <a href="/AttendancePolicy/delete?id=@item.Id" class="btn btn-danger" role="button" onclick="return confirm('Are you sure to delete this records?')">Delete</a>
+                </td>
+            </tr>
+        }
+                
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function(){
+        $("#AttendPolicyTable").DataTable();
+    })
+</script>
