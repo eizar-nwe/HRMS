@@ -1,0 +1,60 @@
+﻿@model ShiftViewModel
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<form action="/shift/entry" method="post">
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="txtName" name="Name" placeholder="enter shift Name in here" required >        
+    </div>
+    <div class="mb-3">
+        <label for="InTime" class="form-label">In Time</label>
+        <input type="time" class="form-control" id="txtInTime" name="InTime" placeholder="enter In Time in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="OutTime" class="form-label">Out Time</label>
+        <input type="time" class="form-control" id="txtOutTime" name="OutTime" placeholder="enter Out Time in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="LateAfter" class="form-label">Late After</label>
+        <input type="time" class="form-control" id="txtLateAfter" name="LateAfter" placeholder="enter Late After in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="EarlyOutBefore" class="form-label">Early Out Before</label>
+        <input type="time" class="form-control" id="txtEarlyOutBefore" name="EarlyOutBefore" placeholder="enter Early Out Before in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="AttendancePolicyId" class="form-label">Attendance Policy</label>
+        <select class="form-select" id="txtAttendancePolicyId" name="AttendancePolicyId">
+            <option selected>[Select One]</option>
+            @foreach(var item in Model.AttendancePolicyVM)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }            
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success" id="btnEntry">Entry</button>
+    <button type="reset" class="btn btn-primary">Cancel</button>
+</form>
+
+<script>
+    $(document).ready(function () {
+        $("#btnEntry").attr("disabled",true);
+
+        function toggleEntryButton(){
+            if ($("#txtName").val().length != 0) {
+                $("#btnEntry").attr("disabled", false);
+            } else {
+                $("#btnEntry").attr("disabled", true);
+            }
+        }
+        $("#txtName").keyup(function () {
+            toggleEntryButton();
+        });
+    });
+
+</script>

@@ -40,10 +40,9 @@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                               Positon
+                               Position
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/position/entry">Entry</a></li>
+                            <ul class="dropdown-menu">                               
                                 <li><a class="dropdown-item" href="/position/list">List</a></li>
                             </ul>
                         </li>
@@ -52,8 +51,7 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Department
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/Department/entry">Entry</a></li>
+                            <ul class="dropdown-menu">                                
                                 <li><a class="dropdown-item" href="/Department/list">List</a></li>
                             </ul>
                         </li>
@@ -62,19 +60,8 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Employee
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/Employee/entry">Entry</a></li>
+                            <ul class="dropdown-menu">                                
                                 <li><a class="dropdown-item" href="/Employee/list">List</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Daily Attendance
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/DailyAttendance/entry">Entry</a></li>
-                                <li><a class="dropdown-item" href="/DailyAttendance/list">List</a></li>
                             </ul>
                         </li>
 
@@ -82,16 +69,45 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Attendance Policy
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/AttendancePolicy/entry">Entry</a></li>
+                            <ul class="dropdown-menu">                                
                                 <li><a class="dropdown-item" href="/AttendancePolicy/list">List</a></li>
                             </ul>
                         </li>
 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Shift
+                            </a>
+                            <ul class="dropdown-menu">                                
+                                <li><a class="dropdown-item" href="/shift/list">List</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Shift Assign
+                            </a>
+                            <ul class="dropdown-menu">                                
+                                <li><a class="dropdown-item" href="/ShiftAssign/list">List</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Daily Attendance
+                            </a>
+                            <ul class="dropdown-menu">                                
+                                <li><a class="dropdown-item" href="/DailyAttendance/list">List</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <partial name="_LoginPartial" />
+                        </li>
+
                     </ul>
-
                 </div>
-
             </div>
         </nav>
     </header>

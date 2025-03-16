@@ -1,0 +1,56 @@
+﻿@model IList<ShiftViewModel>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<h1>Shift List Information</h1>
+
+@if(TempData["Msg"] != null && !Convert.ToBoolean(TempData["IsErrorOccur"]))
+{
+    <div class="alert alert-success" role="alert">
+        <span>@TempData["Msg"]</span>
+    </div>
+}
+else if (TempData["Msg"] != null && Convert.ToBoolean(TempData["IsErrorOccur"]))
+{
+    <div class="alert alert-danger" role="alert">
+        <span>@TempData["Msg"]</span>
+    </div>
+}
+
+<table class="table" id="shiftTable">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">In Time</th>
+            <th scope="col">Out Time</th>
+            <th scope="col">Late After</th>
+            <th scope="col">Early Out Before</th>
+            <th scope="col">Attendance Policy</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <th scope="row">@(Model.IndexOf(item)+1)</th>
+                <td>@item.Name</td>
+                <td>@item.InTime</td>
+                <td>@item.OutTime</td>
+                <td>@item.LateAfter</td>
+                <td>@item.EarlyOutBefore</td>
+                <td>@item.AttendancePolicyId</td>
+                <td>
+                    <a href="/shift/edit?id=@item.Id" class="btn btn-success" role="button">Edit</a>
+                    <a href="/shift/delete?id=@item.Id" class="btn btn-danger" role="button" onclick="return confirm('Are you sure to delete this record?')">Delete</a>
+                </td>
+            </tr>
+        }               
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function () {
+        $("#shiftTable").DataTable();
+    })
+</script>

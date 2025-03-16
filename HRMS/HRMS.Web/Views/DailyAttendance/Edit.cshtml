@@ -24,11 +24,17 @@
 
     <div class="mb-3">
         <label for="EmployeeId" class="form-label">Employee</label>
-        <select class="form-select" id="txtEmpeId" name="EmployeeId">
-            <option value="x" selected>[Select One]</option>
+        <select class="form-select" id="txtEmpeId" name="EmployeeId">            
             @foreach (var employee in Model.EmployeeViewModels)
             {
-                <option value="@employee.Id">@employee.Code</option>
+                if(employee.Id == Model.EmployeeId)
+                {
+                    <option value="@employee.Id" selected>@employee.Code</option>
+                }
+                else
+                {
+                    <option value="@employee.Id">@employee.Code</option>
+                }                
             }
         </select>
     </div>
@@ -39,7 +45,13 @@
             <option value="x" selected>[select one]</option>
             @foreach (var department in Model.DepartmentViewModels)
             {
-                <option value="@department.Id">@department.Code</option>
+                if(department.Id == Model.DepartmentId)
+                {
+                    <option value="@department.Id" selected>@department.Code</option>
+                }
+                else{
+                    <option value="@department.Id">@department.Code</option>
+                }
             }
         </select>
     </div>
@@ -49,23 +61,7 @@
 </form>
 
 <script>
-    $(document).ready(function () {
-
-        const employeeId = document.getElementById("txtEmpeId");
-        if ("@Model.EmployeeId" != "x") {
-            employeeId.value = "@Model.EmployeeId";
-        } else {
-            employeeId.selectedIndex = 0;
-        }
-
-        const departmentId = document.getElementById("txtDeptId");
-        if ("@Model.DepartmentId" != "x") {
-            departmentId.value = "@Model.DepartmentId";
-        } else {
-            departmentId.selectedIndex = 0;
-        }
-        
-        //-------------------------------
+    $(document).ready(function () {        
         function toggleEntryButton() {
             if ($('#txtAttDate').val().length != 0 && $('#txtInTime').val().length != 0 && $('#txtOutTime').val().length != 0) {
                 $('#btnEntry').attr('disabled', false);

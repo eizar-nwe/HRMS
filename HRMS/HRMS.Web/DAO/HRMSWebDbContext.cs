@@ -1,8 +1,10 @@
 ﻿using HRMS.Web.Models.DataModels;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace HRMS.Web.DAO {
-    public class HRMSWebDbContext : DbContext {
+    public class HRMSWebDbContext : IdentityDbContext<IdentityUser, IdentityRole, string> {
         //constructor interchanging 
         public HRMSWebDbContext(DbContextOptions<HRMSWebDbContext> o) : base(o) {
 
@@ -11,7 +13,9 @@ namespace HRMS.Web.DAO {
         public DbSet<PositionEntity> Positions { get; set; }
         public DbSet<DepartmentEntity> Departments { get; set; }
         public DbSet<EmployeeEntity> Employees { get; set; }
-        public DbSet<DailyAttendanceEntity> DailyAttendance { get; set; }
         public DbSet<AttendancePolicyEntity> AttendancePolicy { get; set; }
+        public DbSet<ShiftEntity> Shifts { get; set; }
+        public DbSet<ShiftAssignEntity> ShiftAssigns { get; set; }
+        public DbSet<DailyAttendanceEntity> DailyAttendance { get; set; }                
     }
 }

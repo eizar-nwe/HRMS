@@ -5,6 +5,190 @@
       "PackagePath": "staticwebassets\\HRMS.Web.bundle.scp.css"
     },
     {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\AdminLTEFullLogo.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\AdminLTEFullLogo.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\AdminLTELogo.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\AdminLTELogo.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\avatar.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\avatar.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\avatar2.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\avatar2.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\avatar3.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\avatar3.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\avatar4.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\avatar4.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\avatar5.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\avatar5.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\boxed-bg.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\boxed-bg.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\boxed-bg.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\boxed-bg.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\credit\\american-express.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\credit\\american-express.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\credit\\cirrus.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\credit\\cirrus.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\credit\\mastercard.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\credit\\mastercard.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\credit\\paypal.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\credit\\paypal.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\credit\\paypal2.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\credit\\paypal2.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\credit\\visa.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\credit\\visa.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\default-150x150.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\default-150x150.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\icons.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\icons.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\photo1.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\photo1.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\photo2.png",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\photo2.png"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\photo3.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\photo3.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\photo4.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\photo4.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\prod-1.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\prod-1.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\prod-2.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\prod-2.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\prod-3.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\prod-3.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\prod-4.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\prod-4.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\prod-5.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\prod-5.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\user1-128x128.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\user1-128x128.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\user2-160x160.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\user2-160x160.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\user3-128x128.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\user3-128x128.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\user4-128x128.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\user4-128x128.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\user5-128x128.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\user5-128x128.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\user6-128x128.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\user6-128x128.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\user7-128x128.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\user7-128x128.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\user8-128x128.jpg",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\assets\\img\\user8-128x128.jpg"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\css\\adminlte.css",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\css\\adminlte.css"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\css\\adminlte.css.map",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\css\\adminlte.css.map"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\css\\adminlte.min.css",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\css\\adminlte.min.css"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\css\\adminlte.min.css.map",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\css\\adminlte.min.css.map"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\css\\adminlte.rtl.css",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\css\\adminlte.rtl.css"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\css\\adminlte.rtl.css.map",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\css\\adminlte.rtl.css.map"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\css\\adminlte.rtl.min.css",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\css\\adminlte.rtl.min.css"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\css\\adminlte.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\css\\adminlte.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\js\\adminlte.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\js\\adminlte.js"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\js\\adminlte.js.map",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\js\\adminlte.js.map"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\js\\adminlte.min.js",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\js\\adminlte.min.js"
+    },
+    {
+      "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\js\\adminlte.min.js.map",
+      "PackagePath": "staticwebassets\\AdminLTE\\dist\\js\\adminlte.min.js.map"
+    },
+    {
       "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

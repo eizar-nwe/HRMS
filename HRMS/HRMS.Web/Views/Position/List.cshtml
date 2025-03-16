@@ -23,7 +23,11 @@ else if (TempData["Msg"] != null)
             <th scope="col">Code</th>
             <th scope="col">Description</th>
             <th scope="col">Level</th>
-            <th scope="col">Action</th>
+            @if (User.IsInRole("HR"))
+            {
+                <th scope="col">Action</th>
+            }
+
         </tr>
     </thead>
     <tbody>
@@ -34,10 +38,13 @@ else if (TempData["Msg"] != null)
                 <td>@item.Code</td>
                 <td>@item.Description</td>
                 <td>@item.Level</td>
-                <td>
-                    <a href="/position/edit?Id=@item.Id" class="btn btn-success" role="button">Edit</a>
-                    <a href="/position/delete?Id=@item.Id" class="btn btn-danger" role="button" onclick="return confirm('are you sure to delete this record?')">Delete</a>
-                </td>
+                @if (User.IsInRole("HR"))
+                {
+                    <td>
+                        <a href="/position/edit?Id=@item.Id" class="btn btn-success" role="button">Edit</a>
+                        <a href="/position/delete?Id=@item.Id" class="btn btn-danger" role="button" onclick="return confirm('are you sure to delete this record?')">Delete</a>
+                    </td>
+                }
             </tr>
         }
     </tbody>

@@ -1,0 +1,127 @@
+﻿@model EmployeeViewModel
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<h3>Employee Edit Form</h3>
+<form action="/employee/update" method="post">
+    <div class="mb-3">
+
+        <input hidden value="@Model.Id" name="Id" />
+        <label for="code" class="form-label">Code</label>
+        <input type="text" class="form-control" value="@Model.Code" name="Code" id="txtCode" placeholder="type employee code in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" value="@Model.Name"  name="Name" id="txtName" placeholder="type name in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" value="@Model.Email"  name="Email" id="txtEmail" placeholder="type Email in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Gender" value="M" @(Model.Gender=="M"? "checked":"null")>
+            <label class="form-check-label">Male</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Gender" value="F" @(Model.Gender == "F" ? "checked" : "null")>
+            <label class="form-check-label">Female</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Gender" value="O" @(Model.Gender == "O" ? "checked" : "null")>
+            <label class="form-check-label">Others</label>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="dob" class="form-label">DOB</label>
+        <input type="date" class="form-control" value="@Model.DOB.ToString("yyyy-MM-dd")" name="DOB" id="txtDOB" placeholder="type DOB in here" required max="@DateTime.Now.ToString("yyyy-MM-dd")">
+    </div>
+
+    <div class="mb-3">
+        <label for="doe" class="form-label">DOE</label>
+        <input type="date" class="form-control" value="@Model.DOE.ToString("yyyy-MM-dd")" name="DOE" id="txtDOE" placeholder="type DOE in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="Department" class="form-label">Department</label>
+        <select class="form-select" name="DepartmentId" required>            
+            @foreach (var department in Model.DepartmentViewModels)
+            {
+                @if (department.Id == Model.DepartmentId)
+                {
+                    <option value="@department.Id" selected>@department.Code</option>
+                }
+                else
+                {
+                    <option value="@department.Id">@department.Code</option>
+                }               
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="Position" class="form-label">Position</label>
+        <select class="form-select" name="PositionId" required>            
+            @foreach (var position in Model.PositionViewModels)
+            {
+                @if (position.Id == Model.PositionId)
+                {
+                    <option value="@position.Id" selected>@position.Code</option>
+                }
+                else
+                {
+                    <option value="@position.Id">@position.Code</option>
+                }                
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="dor" class="form-label">DOR</label>
+        <input type="date" class="form-control" value="@Model.DOR.Value.ToString("yyyy-MM-dd")"  name="DOR" id="txtDOR" placeholder="type DOR in here">
+    </div>
+
+    <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" class="form-control" value="@Model.Address" name="Address" placeholder="type Address in here">
+    </div>
+
+    <div class="mb-3">
+        <label for="basicSalary" class="form-label">BasicSalary</label>
+        <input type="number" class="form-control" value="@Model.BasicSalary" name="BasicSalary" placeholder="type BasicSalary in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" class="form-control" value="@Model.Phone" name="Phone" placeholder="type Phone in here" required>
+    </div>
+
+    <button type="submit" class="btn btn-success" id="btnEdit">Update</button>
+    <button type="reset" class="btn btn-primary">Cancel</button>
+</form>
+
+<script>
+    $(document).ready(function () {
+        //initially disable the entry button
+        $('#btnEdit').attr('disabled', true);
+        //function defination
+        function toggleEntryButton() {
+            if ($('#txtCode').val().length != 0 && $('#txtName').val().length != 0) {
+                $('#btnEdit').attr('disabled', false);
+            } else {
+                $('#btnEdit').attr('disabled', true);
+            }
+        }
+
+        $('#txtCode, #txtName').keyup(function () {
+            toggleEntryButton();
+        });
+    });
+</script>

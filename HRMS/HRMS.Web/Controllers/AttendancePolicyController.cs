@@ -122,6 +122,7 @@ namespace HRMS.Web.Controllers
                 if (attPolicyEntity is not null)
                 {
                     attPolicyEntity.IsActive = false;
+                    _db.Update(attPolicyEntity);
                     _db.SaveChanges();
 
                     TempData["Msg"] = "Data has been deleted successfully.";

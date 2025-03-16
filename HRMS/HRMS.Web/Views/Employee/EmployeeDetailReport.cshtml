@@ -1,0 +1,19 @@
+﻿@model EmployeeViewModel
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<h3>Employee Detail Report</h3>
+<form action="/employee/EmployeeDetailReport" method="post">
+    <div class="mb-3">
+        <label for="fromCode" class="form-label">From Code</label>
+        <input type="text" class="form-control" name="fromCode" id="txtFromCode" placeholder="type From code in here" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="toCode" class="form-label">To Code</label>
+        <input type="text" class="form-control" name="toCode" id="txtToCode" placeholder="type To Code in here" required>
+    </div>
+
+    <button type="submit" class="btn btn-success" id="btnShow">Show</button>
+    <button type="reset" class="btn btn-primary">Cancel</button>
+</form>

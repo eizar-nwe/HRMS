@@ -14,6 +14,7 @@ BasicSalary decimal(18,2) Not Null,
 Phone nvarchar(255) Not Null,
 DepartmentId char(36) Not Null,
 PositionId char(36) Not Null,
+UserId char(36) Not Null,
 
 CreatedAt DateTime Not Null,
 CreatedBy char(36) Not NUll,

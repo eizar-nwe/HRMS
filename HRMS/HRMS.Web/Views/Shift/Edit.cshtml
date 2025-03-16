@@ -1,0 +1,65 @@
+﻿@model ShiftViewModel
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<form action="/shift/update" method="post">
+    <div class="mb-3">
+        <input hidden name="Id" value="@Model.Id" />
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="txtName" name="Name" placeholder="enter shift Name in here" required value="@Model.Name">
+    </div>
+    <div class="mb-3">
+        <label for="InTime" class="form-label">In Time</label>
+        <input type="time" class="form-control" id="txtInTime" name="InTime" placeholder="enter In Time in here" required value="@Model.InTime">
+    </div>
+
+    <div class="mb-3">
+        <label for="OutTime" class="form-label">Out Time</label>
+        <input type="time" class="form-control" id="txtOutTime" name="OutTime" placeholder="enter Out Time in here" required value="@Model.OutTime">
+    </div>
+
+    <div class="mb-3">
+        <label for="LateAfter" class="form-label">Late After</label>
+        <input type="time" class="form-control" id="txtLateAfter" name="LateAfter" placeholder="enter Late After in here" required value="@Model.LateAfter">
+    </div>
+
+    <div class="mb-3">
+        <label for="EarlyOutBefore" class="form-label">Early Out Before</label>
+        <input type="time" class="form-control" id="txtEarlyOutBefore" name="EarlyOutBefore" placeholder="enter Early Out Before in here" required value="@Model.EarlyOutBefore">
+    </div>
+
+    <div class="mb-3">
+        <label for="AttendancePolicyId" class="form-label">Attendance Policy</label>
+        <select class="form-select" id="txtAttendancePolicyId" name="AttendancePolicyId">            
+            @foreach (var item in Model.AttendancePolicyVM)
+            {
+                @if (item.Id == Model.AttendancePolicyId)
+                {
+                    <option value="@item.Id" selected>@item.Name</option>
+                }else
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success" id="btnEdit">Edit</button>
+    <button type="reset" class="btn btn-primary">Cancel</button>
+</form>
+
+<script>
+    $(document).ready(function () {        
+
+        function toggleEntryButton(){
+            if ($("#txtName").val().length != 0) {
+                $("#btnEdit").attr("disabled", false);
+            } else {
+                $("#btnEdit").attr("disabled", true);
+            }
+        }
+        $("#txtName").keyup(function () {
+            toggleEntryButton();
+        });
+    });
+
+</script>

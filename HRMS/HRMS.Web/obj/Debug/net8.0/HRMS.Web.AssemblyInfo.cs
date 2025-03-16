@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("HRMS.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d6c7ebf62a0cfe98829723bc1516b4d303c9646")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38e2920e24469b73a7bd46b3967701c260201dc7")]
 [assembly: System.Reflection.AssemblyProductAttribute("HRMS.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HRMS.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
