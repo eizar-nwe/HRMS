@@ -1,21 +1,24 @@
 ﻿using HRMS.Web.DAO;
 using HRMS.Web.Models.DataModels;
 using HRMS.Web.Models.ViewModels;
+using HRMS.Web.Services;
 using HRMS.Web.Utilities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HRMS.Web.Controllers
 {
     public class ShiftController : Controller
-    {
-        private readonly HRMSWebDbContext _db;
+    {        
+        private readonly IShiftService _shiftService;
+        private readonly IAttendancePolicyService _attendancePolicyService;
 
-        public ShiftController(HRMSWebDbContext db)
-        {
-            this._db = db;
+        public ShiftController(IShiftService shiftService,IAttendancePolicyService attendancePolicyService)
+        {            
+            this._shiftService = shiftService;
+            this._attendancePolicyService = attendancePolicyService;
         }
-        public IActionResult List()
-        {
+        public IActionResult List() => View(_shiftService.GetAll().ToList());
+       /* {
             IList<ShiftViewModel> shiftVM = (from s in _db.Shifts
                                 join a in _db.AttendancePolicy
                                 on s.AttendancePolicyId equals a.Id
@@ -31,12 +34,13 @@ namespace HRMS.Web.Controllers
                                     AttendancePolicyId = a.Name
                                 }).ToList();            
             return View(shiftVM);
-        }
+        }*/
+
         public IActionResult Entry()
         {
             ShiftViewModel ShiftVM = new ShiftViewModel()
             {
-                AttendancePolicyVM = GetAttendancePolicy()
+                AttendancePolicyVM = _attendancePolicyService.GetAll().ToList()
             };
             return View(ShiftVM);
         }
@@ -45,7 +49,7 @@ namespace HRMS.Web.Controllers
         {
             try
             {
-                ShiftEntity shiftEntity = new ShiftEntity()
+                /*ShiftEntity shiftEntity = new ShiftEntity()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = ShiftVM.Name,
@@ -62,6 +66,8 @@ namespace HRMS.Web.Controllers
 
                 _db.Shifts.Add(shiftEntity);
                 _db.SaveChanges();
+                */
+                _shiftService.Create(ShiftVM);
 
                 TempData["Msg"] = "Data has been saved successfully.";
                 TempData["IsErrorOccur"] = false;
@@ -76,18 +82,19 @@ namespace HRMS.Web.Controllers
         }
         public IActionResult Edit(string id)
         {
-            ShiftViewModel shiftVM = _db.Shifts.Where(w => w.IsActive && w.Id == id).Select(s => new ShiftViewModel
-            {
-                Id=s.Id,
-                Name=s.Name,
-                InTime=s.InTime,
-                OutTime=s.OutTime,
-                LateAfter=s.LateAfter,
-                EarlyOutBefore=s.EarlyOutBefore,
-                AttendancePolicyId=s.AttendancePolicyId
-            }).FirstOrDefault();
+            //ShiftViewModel shiftVM = _db.Shifts.Where(w => w.IsActive && w.Id == id).Select(s => new ShiftViewModel
+            //{
+            //    Id=s.Id,
+            //    Name=s.Name,
+            //    InTime=s.InTime,
+            //    OutTime=s.OutTime,
+            //    LateAfter=s.LateAfter,
+            //    EarlyOutBefore=s.EarlyOutBefore,
+            //    AttendancePolicyId=s.AttendancePolicyId
+            //}).FirstOrDefault();
 
-            shiftVM.AttendancePolicyVM = GetAttendancePolicy();
+            ShiftViewModel shiftVM = _shiftService.GetById(id);
+            shiftVM.AttendancePolicyVM = _attendancePolicyService.GetAll().ToList();
 
             return View(shiftVM);
         }
@@ -95,7 +102,7 @@ namespace HRMS.Web.Controllers
         {
             try
             {
-                ShiftEntity shiftEntity = _db.Shifts.Where(w => w.IsActive && w.Id == shiftVM.Id).FirstOrDefault();
+                /*ShiftEntity shiftEntity = _db.Shifts.Where(w => w.IsActive && w.Id == shiftVM.Id).FirstOrDefault();
                 if (shiftEntity is not null)
                 {
                     shiftEntity.Name = shiftVM.Name;
@@ -110,11 +117,13 @@ namespace HRMS.Web.Controllers
                     shiftEntity.Ip = await NetworkHelper.GetIpAddressAsnyc();
 
                     _db.Shifts.Update(shiftEntity);
-                    _db.SaveChanges();
+                    _db.SaveChanges();*/
+
+                    _shiftService.Update(shiftVM);
 
                     TempData["Msg"] = "Data has been saved successfully.";
                     TempData["IsErrorOccur"] = false;
-                }
+                //}
             }
             catch (Exception e)
             {
@@ -127,16 +136,18 @@ namespace HRMS.Web.Controllers
         {
             try
             {
-                ShiftEntity shiftEntity = _db.Shifts.Where(w => w.IsActive && w.Id == id).FirstOrDefault();
-                if (shiftEntity is not null)
-                {
-                    shiftEntity.IsActive = false;
-                    _db.Shifts.Update(shiftEntity);
-                    _db.SaveChanges();
+                //ShiftEntity shiftEntity = _db.Shifts.Where(w => w.IsActive && w.Id == id).FirstOrDefault();
+                //if (shiftEntity is not null)
+                //{
+                //    shiftEntity.IsActive = false;
+                //    _db.Shifts.Update(shiftEntity);
+                //    _db.SaveChanges();
+                
+                    _shiftService.Delete(id);
 
                     TempData["Msg"] = "Data has been deleted successfully";
                     TempData["IsErrorOccur"] = false;
-                }
+                //}
             }
             catch (Exception e)
             {
@@ -146,13 +157,13 @@ namespace HRMS.Web.Controllers
             return RedirectToAction("List");
         }
 
-        private IList<AttendancePolicyViewModel> GetAttendancePolicy()
+        /*private IList<AttendancePolicyViewModel> GetAttendancePolicy()
         {
             return _db.AttendancePolicy.Where(w => w.IsActive).Select(s => new AttendancePolicyViewModel
             {
                 Id = s.Id,
                 Name = s.Name
             }).ToList();
-        }
+        }*/
     }
 }

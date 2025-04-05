@@ -51,7 +51,7 @@ namespace HRMS.Web.Services
                 if (deptEntity is not null)
                 {
                     deptEntity.IsActive = false;
-                    _unitOfWorks.DepartmentRespository.Update(deptEntity);
+                    _unitOfWorks.DepartmentRespository.Delete(deptEntity);
                     _unitOfWorks.Commit();
                 }
             }

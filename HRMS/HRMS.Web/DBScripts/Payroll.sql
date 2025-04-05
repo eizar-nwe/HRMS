@@ -1,0 +1,25 @@
+Create Table Payroll(
+ID Char(36) Primary Key,
+FromDate DateTime Not Null,
+ToDate DateTime Not Null,
+EmployeeId char(36) Not Null,
+DepartmentId char(36) Not Null,
+IncomeTax	numeric(18,2),
+GrossPay	numeric(18,2),
+NetPay		numeric(18,2),
+Allowance	numeric(18,2),
+Deduction	numeric(18,2),
+AttendanceDays	numeric(18,2),
+AttendanceDeduction	numeric(18,2),
+PayPerDay	numeric(18,2),
+
+CreatedAt DateTime Not Null,
+CreatedBy char(36) Not NUll,
+UpdatedAt DateTime,
+UpdatedBy char(36),
+[Ip] char(255) Not Null,
+IsActive bit Not Null,
+
+Constraint fk_employee_payroll Foreign Key (EmployeeId) References Employee(id),
+Constraint fk_department_payroll Foreign Key (DepartmentId) REferences Department(Id),
+)

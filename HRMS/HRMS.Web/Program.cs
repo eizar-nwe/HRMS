@@ -28,8 +28,13 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IPositionService, PositionService>();
 builder.Services.AddTransient<IDepartmentService, DepartmentService>();
 builder.Services.AddTransient<IEmployeeService, EmployeeService>();
+builder.Services.AddTransient<IAttendancePolicyService, AttendancePolicyService>();
+builder.Services.AddTransient<IShiftService, ShiftService>();
+
 
 builder.Services.AddTransient<IDailyAttendanceService, DailyAttendanceService>();
+builder.Services.AddTransient<IAttendanceMasterService, AttendanceMasterService>();
+builder.Services.AddTransient<IPayrollservice, PayrollService>();
 
 builder.Services.AddTransient<IUserService, UserService>();
 

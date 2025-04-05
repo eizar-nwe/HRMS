@@ -4,7 +4,7 @@ using HRMS.Web.Repositories.Common;
 
 namespace HRMS.Web.Repositories.Domain
 {
-    public class DepartmentRepository : BaseRepository<DepartmentEntity>, IDepartmentRespository
+    public class DepartmentRepository : BaseRepository<DepartmentEntity>, IDepartmentRepository
     {
         private readonly HRMSWebDbContext _dbcontext;
 

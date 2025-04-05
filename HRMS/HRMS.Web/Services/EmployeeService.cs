@@ -62,7 +62,7 @@ namespace HRMS.Web.Services
                 if (empeEntity is not null)
                 {
                     empeEntity.IsActive = false;
-                    _unitOfWork.EmployeeRespository.Update(empeEntity);
+                    _unitOfWork.EmployeeRespository.Delete(empeEntity);
                     _unitOfWork.Commit();
 
                 }
@@ -80,7 +80,6 @@ namespace HRMS.Web.Services
                                                   on e.PositionId equals p.Id
                                                   join d in _unitOfWork.DepartmentRespository.GetAll(s => s.IsActive)
                                                   on e.DepartmentId equals d.Id
-                                                  where e.IsActive && d.IsActive && p.IsActive
 
                                                   select new EmployeeViewModel
                                                   {

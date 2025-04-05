@@ -467,6 +467,64 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item menu-close">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon bi bi-speedometer"></i>
+                                <p>
+                                    Attendance Master
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/attendancemaster/DayEndProcess" class="nav-link">
+                                        <i class="nav-icon bi bi-circle"></i>
+                                        <p>Day End Process</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/attendancemaster/list" class="nav-link">
+                                        <i class="nav-icon bi bi-circle"></i>
+                                        <p>Listing</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/attendancemaster/report" class="nav-link active">
+                                        <i class="nav-icon bi bi-circle"></i>
+                                        <p>Report</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item menu-close">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon bi bi-speedometer"></i>
+                                <p>
+                                    Payroll
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/payroll/PayrollProcess" class="nav-link">
+                                        <i class="nav-icon bi bi-circle"></i>
+                                        <p>Day End Process</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/payroll/list" class="nav-link">
+                                        <i class="nav-icon bi bi-circle"></i>
+                                        <p>Listing</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/payroll/report" class="nav-link active">
+                                        <i class="nav-icon bi bi-circle"></i>
+                                        <p>Report</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
                     </ul>
                     <!--end::Sidebar Menu-->
@@ -532,5 +590,14 @@
     <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
+    // <script>
+    //     $(document).ready(function () {
+    //         $("li").click(function(){
+    //             $("li").removeClass('menu-close'); 
+    //             $("li").removeClass('menu-open'); 
+    //             $(this).addClass('menu-open'); 
+    //         });
+    //     });
+    // </script>
 </body>
 </html>

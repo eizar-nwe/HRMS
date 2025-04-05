@@ -17,5 +17,8 @@ namespace HRMS.Web.DAO {
         public DbSet<ShiftEntity> Shifts { get; set; }
         public DbSet<ShiftAssignEntity> ShiftAssigns { get; set; }
         public DbSet<DailyAttendanceEntity> DailyAttendance { get; set; }                
+        public DbSet<AttendanceMasterEntity> AttendanceMaster { get; set; }   
+        public DbSet<PayrollEntity> Payroll { get; set; }
+
     }
 }

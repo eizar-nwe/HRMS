@@ -1,0 +1,60 @@
+﻿@model PayrollViewModel
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<h1>Payroll Process</h1>
+
+<form action="/payroll/PayrollProcess" method="post">        
+
+    <div class="mb-3">
+        <label for="FromDate" class="form-label">From Date</label>
+        <input type="date" id="txtFromDate" name="FromDate" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="ToDate" class="form-label">To Date</label>
+        <input type="date" id="txtToDate" name="ToDate" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="DepartmentId" class="form-label">Department</label>
+        <select class="form-select" id="DepartmentId" name="DepartmentId">
+            <option value="x" selected>[Select One]</option>
+            @foreach (var dept in Model.DepartmentViewModels)
+            {
+                <option value="@dept.Id">@dept.Code</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="EmployeeId" class="form-label">Employee</label>
+        <select class="form-select" id="EmployeeId" name="EmployeeId">
+            <option value="x" selected>[Select One]</option>
+            @foreach (var empe in Model.EmployeeViewModels)
+            {
+                <option value="@empe.Id">@empe.Name</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="btnSubmit">Payroll Process</button>
+    <button type="reset" class="btn btn-danger">Cancel</button>
+</form>
+
+
+<script>
+    $(document).ready(function () {
+        $('#btnSubmit').attr('disabled', true);        
+
+        function toggleEntryButton(){
+            if ($('#txtFromDate').val().length !=0 && $('#txtToDate').val().length != 0 && $('#DepartmentId').val() != 'x' && $('#EmployeeId').val() != 'x') {
+                $('#btnSubmit').attr('disabled', false);
+            }
+            else{
+                $('#btnSubmit').attr('disabled', true);
+            }
+        }
+
+        $('#txtFromDate,#txtToDate,#DepartmentId,#EmployeeId').on('change', function () {
+            toggleEntryButton();
+        });
+    });
+
+</script>

@@ -1,6 +1,7 @@
 ﻿using HRMS.Web.DAO;
 using HRMS.Web.Models.DataModels;
 using HRMS.Web.Models.ViewModels;
+using HRMS.Web.Services;
 using HRMS.Web.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -9,52 +10,56 @@ namespace HRMS.Web.Controllers
 {
     public class AttendancePolicyController : Controller
     {
-        private readonly HRMSWebDbContext _db;
+        private readonly IAttendancePolicyService _attendancePolicyService;
 
-        public AttendancePolicyController(HRMSWebDbContext db)
-        {
-            this._db = db;
+        //private readonly HRMSWebDbContext _db;
+
+        public AttendancePolicyController(IAttendancePolicyService attendancePolicyService)
+        {            
+            this._attendancePolicyService = attendancePolicyService;
         }
         [HttpGet]
-        public IActionResult List()
-        {
-            IList<AttendancePolicyViewModel> attPolicyVM = _db.AttendancePolicy.Where(w => w.IsActive).Select(s => new AttendancePolicyViewModel
-            {
-                Id=s.Id,
-                Name=s.Name,
-                NumberOfLateTime=s.NumberOfLateTime,
-                NumberOfEarlyOutTime=s.NumberOfEarlyOutTime,
-                DeductionInAmount=s.DeductionInAmount,
-                DeductionInDay=s.DeductionInDay
-            }).ToList();
+        public IActionResult List() => View(_attendancePolicyService.GetAll().ToList());
+        //{
+        //    IList<AttendancePolicyViewModel> attPolicyVM = _db.AttendancePolicy.Where(w => w.IsActive).Select(s => new AttendancePolicyViewModel
+        //    {
+        //        Id=s.Id,
+        //        Name=s.Name,
+        //        NumberOfLateTime=s.NumberOfLateTime,
+        //        NumberOfEarlyOutTime=s.NumberOfEarlyOutTime,
+        //        DeductionInAmount=s.DeductionInAmount,
+        //        DeductionInDay=s.DeductionInDay
+        //    }).ToList();
 
-            return View(attPolicyVM);
-        }
+        //    return View(attPolicyVM);
+        //}
         [HttpGet]
         public IActionResult Entry()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Entry(AttendancePolicyViewModel attPolicyVM)
+        public IActionResult Entry(AttendancePolicyViewModel attPolicyVM)
         {
             try
             {
-                AttendancePolicyEntity attPolicyEntity = new AttendancePolicyEntity()
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Name = attPolicyVM.Name,
-                    NumberOfLateTime = attPolicyVM.NumberOfLateTime,
-                    NumberOfEarlyOutTime = attPolicyVM.NumberOfEarlyOutTime,
-                    DeductionInAmount = attPolicyVM.DeductionInAmount,
-                    DeductionInDay = attPolicyVM.DeductionInDay,
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "system",
-                    Ip = await NetworkHelper.GetIpAddressAsnyc(),
-                    IsActive = true
-                };
-                _db.AttendancePolicy.Add(attPolicyEntity);
-                _db.SaveChanges();
+                //AttendancePolicyEntity attPolicyEntity = new AttendancePolicyEntity()
+                //{
+                //    Id = Guid.NewGuid().ToString(),
+                //    Name = attPolicyVM.Name,
+                //    NumberOfLateTime = attPolicyVM.NumberOfLateTime,
+                //    NumberOfEarlyOutTime = attPolicyVM.NumberOfEarlyOutTime,
+                //    DeductionInAmount = attPolicyVM.DeductionInAmount,
+                //    DeductionInDay = attPolicyVM.DeductionInDay,
+                //    CreatedAt = DateTime.Now,
+                //    CreatedBy = "system",
+                //    Ip = await NetworkHelper.GetIpAddressAsnyc(),
+                //    IsActive = true
+                //};
+                //_db.AttendancePolicy.Add(attPolicyEntity);
+                //_db.SaveChanges();
+
+                _attendancePolicyService.Create(attPolicyVM);
 
                 TempData["Msg"] = "Data has been saved successfully";
                 TempData["IsErrorOccur"] = false;
@@ -67,44 +72,46 @@ namespace HRMS.Web.Controllers
 
             return RedirectToAction("List");
         }
-    
-        public IActionResult Edit(string id)
-        {
-            AttendancePolicyViewModel attPolicyVM = _db.AttendancePolicy.Where(w => w.IsActive && w.Id == id).Select(s => new AttendancePolicyViewModel
-            {
-                Id=s.Id,
-                Name=s.Name,
-                NumberOfLateTime=s.NumberOfLateTime,
-                NumberOfEarlyOutTime=s.NumberOfEarlyOutTime,
-                DeductionInAmount=s.DeductionInAmount,
-                DeductionInDay=s.DeductionInDay
-            }).FirstOrDefault();
 
-            return View(attPolicyVM);
-        }
+        public IActionResult Edit(string id) => View(_attendancePolicyService.GetById(id));
+        //{
+        //    AttendancePolicyViewModel attPolicyVM = _db.AttendancePolicy.Where(w => w.IsActive && w.Id == id).Select(s => new AttendancePolicyViewModel
+        //    {
+        //        Id=s.Id,
+        //        Name=s.Name,
+        //        NumberOfLateTime=s.NumberOfLateTime,
+        //        NumberOfEarlyOutTime=s.NumberOfEarlyOutTime,
+        //        DeductionInAmount=s.DeductionInAmount,
+        //        DeductionInDay=s.DeductionInDay
+        //    }).FirstOrDefault();
 
-        public async Task<IActionResult> Update(AttendancePolicyViewModel attPolicyVM)
+        //    return View(attPolicyVM);
+        //}
+
+        public IActionResult Update(AttendancePolicyViewModel attPolicyVM)
         {
             try
             {
-                AttendancePolicyEntity attPolicyEntity = _db.AttendancePolicy.Where(w => w.IsActive && w.Id == attPolicyVM.Id).FirstOrDefault();
-                if (attPolicyEntity is not null)
-                {
-                    attPolicyEntity.Name = attPolicyVM.Name;
-                    attPolicyEntity.NumberOfLateTime = attPolicyVM.NumberOfLateTime;
-                    attPolicyEntity.NumberOfEarlyOutTime = attPolicyVM.NumberOfEarlyOutTime;
-                    attPolicyEntity.DeductionInAmount = attPolicyVM.DeductionInAmount;
-                    attPolicyEntity.DeductionInDay = attPolicyVM.DeductionInDay;
-                    attPolicyEntity.UpdatedBy = "system";
-                    attPolicyEntity.UpdatedAt = DateTime.Now;
-                    attPolicyEntity.Ip = await NetworkHelper.GetIpAddressAsnyc();
+                //AttendancePolicyEntity attPolicyEntity = _db.AttendancePolicy.Where(w => w.IsActive && w.Id == attPolicyVM.Id).FirstOrDefault();
+                //if (attPolicyEntity is not null)
+                //{
+                //    attPolicyEntity.Name = attPolicyVM.Name;
+                //    attPolicyEntity.NumberOfLateTime = attPolicyVM.NumberOfLateTime;
+                //    attPolicyEntity.NumberOfEarlyOutTime = attPolicyVM.NumberOfEarlyOutTime;
+                //    attPolicyEntity.DeductionInAmount = attPolicyVM.DeductionInAmount;
+                //    attPolicyEntity.DeductionInDay = attPolicyVM.DeductionInDay;
+                //    attPolicyEntity.UpdatedBy = "system";
+                //    attPolicyEntity.UpdatedAt = DateTime.Now;
+                //    attPolicyEntity.Ip = await NetworkHelper.GetIpAddressAsnyc();
 
-                    _db.AttendancePolicy.Update(attPolicyEntity);
-                    _db.SaveChanges();
+                //    _db.AttendancePolicy.Update(attPolicyEntity);
+                //    _db.SaveChanges();
 
-                    TempData["Msg"] = "Data has been updated successfully";
-                    TempData["IsErrorOccur"] = false;
-                }              
+                _attendancePolicyService.Update(attPolicyVM);
+
+                TempData["Msg"] = "Data has been updated successfully";
+                TempData["IsErrorOccur"] = false;
+                //}              
             }            
             catch (Exception e)
             {
@@ -118,16 +125,18 @@ namespace HRMS.Web.Controllers
         {
             try
             {
-                AttendancePolicyEntity attPolicyEntity = _db.AttendancePolicy.Where(w => w.IsActive && w.Id == id).FirstOrDefault();
-                if (attPolicyEntity is not null)
-                {
-                    attPolicyEntity.IsActive = false;
-                    _db.Update(attPolicyEntity);
-                    _db.SaveChanges();
+                //AttendancePolicyEntity attPolicyEntity = _db.AttendancePolicy.Where(w => w.IsActive && w.Id == id).FirstOrDefault();
+                //if (attPolicyEntity is not null)
+                //{
+                //    attPolicyEntity.IsActive = false;
+                //    _db.Update(attPolicyEntity);
+                //    _db.SaveChanges();
+                
+                _attendancePolicyService.Delete(id);
 
-                    TempData["Msg"] = "Data has been deleted successfully.";
-                    TempData["IsErrorOccur"] = false;
-                }
+                TempData["Msg"] = "Data has been deleted successfully.";
+                TempData["IsErrorOccur"] = false;
+                //}
 
             }
             catch (Exception e)

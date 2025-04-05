@@ -78,6 +78,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/EWAD7/Project/HRMS/HRMS.Web/Views/AttendanceMaster/DayEndProcess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZU1hc3RlclxEYXlFbmRQcm9jZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWAD7/Project/HRMS/HRMS.Web/Views/AttendanceMaster/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZU1hc3RlclxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/EWAD7/Project/HRMS/HRMS.Web/Views/AttendancePolicy/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZW5kYW5jZVBvbGljeVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -140,6 +148,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/EWAD7/Project/HRMS/HRMS.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWAD7/Project/HRMS/HRMS.Web/Views/Payroll/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5cm9sbFxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/EWAD7/Project/HRMS/HRMS.Web/Views/Payroll/PayrollProcess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5cm9sbFxQYXlyb2xsUHJvY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/EWAD7/Project/HRMS/HRMS.Web/Views/Position/Edit.cshtml]

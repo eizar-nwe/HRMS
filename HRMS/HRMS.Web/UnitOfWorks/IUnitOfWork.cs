@@ -7,8 +7,12 @@ namespace HRMS.Web.UnitOfWorks
         void Commit();
         void Rollback();
         IPositionRepository PositionRepository { get; }
-        IDepartmentRespository DepartmentRespository { get; }
+        IDepartmentRepository DepartmentRespository { get; }
         IEmployeeRepository EmployeeRespository { get; }
         IDailyAttendanceRepository DailyAttendanceRepository { get; }
+        IAttendancePolicyRepository AttendancePolicyRepository { get; }
+        IAttendanceMasterRepository AttendanceMasterRepository { get; }        
+        IShiftRepository ShiftRepository { get; }
+        IPayrollRepository PayrollRepository { get; }
     }
 }
