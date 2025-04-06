@@ -52,6 +52,9 @@ namespace HRMS.Web.UnitOfWorks
         private IPayrollRepository payrollRepository;
         public IPayrollRepository PayrollRepository => payrollRepository?? new PayrollRepository(_dbContext);
 
+        private IShiftAssignRepository shiftAssignRepository;
+        public IShiftAssignRepository ShiftAssignRepository => shiftAssignRepository?? new ShiftAssignRepository(_dbContext);
+
         public void Commit() => _dbContext.SaveChanges();        
 
         public void Rollback()

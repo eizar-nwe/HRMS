@@ -30,7 +30,7 @@ builder.Services.AddTransient<IDepartmentService, DepartmentService>();
 builder.Services.AddTransient<IEmployeeService, EmployeeService>();
 builder.Services.AddTransient<IAttendancePolicyService, AttendancePolicyService>();
 builder.Services.AddTransient<IShiftService, ShiftService>();
-
+builder.Services.AddTransient<IShiftAssignService, ShiftAssignService>();
 
 builder.Services.AddTransient<IDailyAttendanceService, DailyAttendanceService>();
 builder.Services.AddTransient<IAttendanceMasterService, AttendanceMasterService>();

@@ -4,20 +4,14 @@
 
 <h1> Payroll Information</h1>
 
-@if (TempData["Msg"] != null && !Convert.ToBoolean(TempData["IsErrorOccur"]))
+@if (TempData["info"] != null)
 {
-    <div class="alert alert-success" role="alert">
-        <span>@TempData["Msg"]</span>
-    </div>
-}
-else if (TempData["Msg"] != null)
-{
-    <div class="alert alert-danger" role="alert">
-        <span>@TempData["Msg"]</span>
+    <div class="alert alert-info">
+        @TempData["info"]
     </div>
 }
 
-<table class="table" id="PayrollTable">
+<table class="table table-bordered table-striped" id="PayrollTable">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -33,14 +27,20 @@ else if (TempData["Msg"] != null)
             <th scope="col">AttendanceDays</th>
             <th scope="col">AttendanceDeduction</th>
             <th scope="col">PayPerDay</th>            
-            <th scope="col">Actions</th>
+            @if (User.IsInRole("HR"))
+            {
+                <th scope="col">Actions</th>
+            }
         </tr>
     </thead>
     <tbody>
+        @{
+            int index = 1;
+        }
         @foreach (var item in Model)
         {
             <tr>
-                <th scope="row">@(Model.IndexOf(item) + 1)</th>
+                <th scope="row">@index</th>
                 <td>@item.FromDate.ToString("yyyy-MM-dd")</td>
                 <td>@item.ToDate.ToString("yyyy-MM-dd")</td>                
                 <td>@item.EmployeeInfo</td>
@@ -53,16 +53,29 @@ else if (TempData["Msg"] != null)
                 <td>@item.AttendanceDays</td>
                 <td>@item.AttendanceDeduction</td>
                 <td>@item.PayPerDay</td>
-                <td>
-                    <a href="/payroll/Edit?id=@item.Id" class="btn btn-success" role="button">Edit</a>
-                    <a href="/payroll/Delete?id=@item.Id" class="btn btn-danger" role="button" onclick="return confirm('Are you sure to delete this record?')">Delete</a>
+                @if (User.IsInRole("HR"))
+                {
+                    <td>
+                        <a href="#" class="btn btn-primary" role="button">Edit</a>
+
+                    <a asp-action="Delete" asp-controller="Payroll" asp-route-id="@item.Id"
+                       onclick="return confirm('are you sure to delete this record?');" class="btn btn-danger"
+                       role="button"> Delete</a>
+
                 </td>
+                }
             </tr>
+            index++;
         }
     </tbody>
 </table>
-<script>
+<script type="text/javascript">
     $(document).ready(function () {
-        $("#PayrollTable").DataTable();
+        $("#PayrollTable").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#PayrollTable_wrapper .col-md-6:eq(0)');
     });
 </script>

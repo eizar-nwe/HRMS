@@ -5,14 +5,14 @@ namespace HRMS.Web.Models.DataModels
     [Table("AttendanceMaster")]
     public class AttendanceMasterEntity :BaseEntity
     {
-        public required DateTime AttendanceDate { get; set; }
-        public required TimeSpan InTime { get; set; }
-        public required TimeSpan OutTime { get; set; }
-        public required string EmployeeId { get; set; }
-        public required string DepartmentId { get; set; }
-        public required string ShiftId { get; set; }
-        public required bool IsLate { get; set; }
-        public required bool IsEarlyOut { get; set; }
-        public required bool IsLeave { get; set; }
+        public DateTime AttendanceDate { get; set; }
+        public TimeSpan InTime { get; set; }
+        public TimeSpan OutTime { get; set; }
+        public string EmployeeId { get; set; }
+        public string DepartmentId { get; set; }
+        public string ShiftId { get; set; }
+        public bool IsLate { get; set; }
+        public bool IsEarlyOut { get; set; }
+        public bool IsLeave { get; set; }
     }
 }

@@ -44,7 +44,7 @@
         $('#btnSubmit').attr('disabled', true);        
 
         function toggleEntryButton(){
-            if ($('#txtFromDate').val().length !=0 && $('#txtToDate').val().length != 0 && $('#DepartmentId').val() != 'x' && $('#EmployeeId').val() != 'x') {
+            if ($('#txtFromDate').val().length !=0 && $('#txtToDate').val().length != 0 && ($('#DepartmentId').val() != 'x' || $('#EmployeeId').val() != 'x')) {
                 $('#btnSubmit').attr('disabled', false);
             }
             else{

@@ -14,5 +14,6 @@ namespace HRMS.Web.UnitOfWorks
         IAttendanceMasterRepository AttendanceMasterRepository { get; }        
         IShiftRepository ShiftRepository { get; }
         IPayrollRepository PayrollRepository { get; }
+        IShiftAssignRepository ShiftAssignRepository { get; }
     }
 }

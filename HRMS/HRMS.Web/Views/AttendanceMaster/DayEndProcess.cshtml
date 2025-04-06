@@ -35,7 +35,7 @@
 
     <div class="mb-3">
         <label for="FromDate" class="form-label">From Date</label>
-        <input type="date" id="txtFromDate" name="FromDate" class="form-control" required>
+        <input type="date" id="txtFromDate" name="AttendanceDate" class="form-control" required>
     </div>
     <div class="mb-3">
         <label for="ToDate" class="form-label">To Date</label>
@@ -50,8 +50,8 @@
     $(document).ready(function () {
         $('#btnSubmit').attr('disabled', true);
         
-        function toggleEntryButton(){
-            if ($('#txtFromDate').val().length !=0 && $('#txtToDate').val().length != 0 && $('#DepartmentId').val() != 'x' && $('#EmployeeId').val() != 'x' && $('#ShiftId').val() !='x') {
+        function toggleEntryButton(){                     
+            if ($('#txtFromDate').val().length !=0 && $('#txtToDate').val().length != 0 && ($('#DepartmentId').val() != 'x' || $('#EmployeeId').val() != 'x' || $('#ShiftId').val() !='x')) {
                 $('#btnSubmit').attr('disabled', false);
             }
             else{
@@ -59,7 +59,7 @@
             }
         }
 
-        $('#DepartmentId,#EmployeeId,#ShiftId').on('change', function () {
+        $('#txtFromDate,#txtToDate,#DepartmentId,#EmployeeId,#ShiftId').on('change', function () {
             toggleEntryButton();
         });
     });

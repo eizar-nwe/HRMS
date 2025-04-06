@@ -31,6 +31,16 @@ namespace HRMS.Web.Controllers
         [HttpPost]
         public IActionResult PayrollProcess(PayrollViewModel payroll)
         {
+            try
+            {
+                _payrollservice.Delete(payroll.FromDate, payroll.ToDate, payroll.DepartmentId, payroll.EmployeeId);
+                _payrollservice.PayrollProcess(payroll);
+                TempData["Info"] = "successfully save a record to the system";
+            }
+            catch (Exception ex)
+            {
+                TempData["Info"] = "Error occur when  saving a record  to the system";
+            }
             return RedirectToAction("List");
         }
     }

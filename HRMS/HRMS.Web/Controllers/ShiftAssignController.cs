@@ -1,6 +1,7 @@
 ﻿using HRMS.Web.DAO;
 using HRMS.Web.Models.DataModels;
 using HRMS.Web.Models.ViewModels;
+using HRMS.Web.Services;
 using HRMS.Web.Utilities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,14 +9,23 @@ namespace HRMS.Web.Controllers
 {
     public class ShiftAssignController : Controller
     {
-        private readonly HRMSWebDbContext _db;
+        private readonly IShiftAssignService _shiftAssignService;
+        private readonly IDepartmentService _departmentService;
+        private readonly IShiftService _shiftService;
+        private readonly IEmployeeService _employeeService;
 
-        public ShiftAssignController(HRMSWebDbContext db)
+        //private readonly HRMSWebDbContext _db;
+
+        public ShiftAssignController(IShiftAssignService shiftAssignService,IDepartmentService departmentService,IShiftService shiftService,IEmployeeService employeeService)
         {
-            this._db = db;
+            //this._db = db;
+            this._shiftAssignService = shiftAssignService;
+            this._departmentService = departmentService;
+            this._shiftService = shiftService;
+            this._employeeService = employeeService;
         }
-        public IActionResult List()
-        {
+        public IActionResult List() => View(_shiftAssignService.GetAll().ToList());
+/*        {
             IList<ShiftAssignViewModel> ShiftAssignVM = (from a in _db.ShiftAssigns
                                     join e in _db.Employees
                                     on a.EmployeeId equals e.Id
@@ -35,42 +45,44 @@ namespace HRMS.Web.Controllers
                                         DepartmentInfo=d.Code + "/" + d.Description,
                                     }).ToList();                                
             return View(ShiftAssignVM);
-        }
+        }*/
 
         [HttpGet]
         public IActionResult Entry()
         {
             ShiftAssignViewModel ShiftAssVM = new ShiftAssignViewModel()
             {
-                DepartmentViewModels = GetAllDepartment(),
-                ShiftViewModels = GetAllShift(),
-                EmployeeViewModels = GetAllEmployee()
+                DepartmentViewModels = _departmentService.GetAll().ToList(),
+                ShiftViewModels = _shiftService.GetAll().ToList(),
+                EmployeeViewModels = _employeeService.GetAll().ToList()
             };
 
             return View(ShiftAssVM);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Entry(ShiftAssignViewModel ShiftAssignVM)
+        public IActionResult Entry(ShiftAssignViewModel ShiftAssignVM)
         {
             try
             {
-                ShiftAssignEntity shiftAssignEntity = new ShiftAssignEntity()
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    EmployeeId = ShiftAssignVM.EmployeeId,
-                    ShiftId = ShiftAssignVM.ShiftId,
-                    DepartmentId = ShiftAssignVM.DepartmentId,
-                    FromDate = ShiftAssignVM.FromDate,
-                    ToDate = ShiftAssignVM.ToDate,
+                //ShiftAssignEntity shiftAssignEntity = new ShiftAssignEntity()
+                //{
+                //    Id = Guid.NewGuid().ToString(),
+                //    EmployeeId = ShiftAssignVM.EmployeeId,
+                //    ShiftId = ShiftAssignVM.ShiftId,
+                //    DepartmentId = ShiftAssignVM.DepartmentId,
+                //    FromDate = ShiftAssignVM.FromDate,
+                //    ToDate = ShiftAssignVM.ToDate,
 
-                    CreatedAt = DateTime.Now,
-                    CreatedBy = "system",
-                    IsActive = true,
-                    Ip = await NetworkHelper.GetIpAddressAsnyc()
-                };
-                _db.ShiftAssigns.Add(shiftAssignEntity);
-                _db.SaveChanges();
+                //    CreatedAt = DateTime.Now,
+                //    CreatedBy = "system",
+                //    IsActive = true,
+                //    Ip = await NetworkHelper.GetIpAddressAsnyc()
+                //};
+                //_db.ShiftAssigns.Add(shiftAssignEntity);
+                //_db.SaveChanges();
+
+                _shiftAssignService.Create(ShiftAssignVM);
 
                 TempData["Msg"] = "Data has been saved successfully";
                 TempData["IsErrorOccur"] = false;
@@ -87,15 +99,19 @@ namespace HRMS.Web.Controllers
         {
             try
             {
-                ShiftAssignEntity ShiftAssignEntity = _db.ShiftAssigns.Where(w => w.IsActive && w.Id == id).FirstOrDefault();
-                if (ShiftAssignEntity is not null)
-                {
-                    ShiftAssignEntity.IsActive = false;
-                    _db.SaveChanges();
+                //ShiftAssignEntity ShiftAssignEntity = _db.ShiftAssigns.Where(w => w.IsActive && w.Id == id).FirstOrDefault();
+                //if (ShiftAssignEntity is not null)
+                //{
+                //    ShiftAssignEntity.IsActive = false;
+                //    _db.SaveChanges();
 
-                    TempData["Msg"] = "Data has been deleted successfully";
-                    TempData["IsErrorOccur"] = false;
-                }
+                //    TempData["Msg"] = "Data has been deleted successfully";
+                //    TempData["IsErrorOccur"] = false;
+                //}
+
+                _shiftAssignService.Delete(id);
+                TempData["Msg"] = "Data has been deleted successfully";
+                TempData["IsErrorOccur"] = false;
             }
             catch (Exception e)
             {
@@ -107,46 +123,54 @@ namespace HRMS.Web.Controllers
         }
         public IActionResult Edit(string id)
         {
-            ShiftAssignViewModel shiftAssignVM = _db.ShiftAssigns.Where(w => w.IsActive && w.Id == id).Select(s => new ShiftAssignViewModel
-            {
-                Id = s.Id,
-                EmployeeId = s.EmployeeId,
-                ShiftId = s.ShiftId,
-                DepartmentId = s.DepartmentId,
-                FromDate = s.FromDate,
-                ToDate = s.ToDate               
-            }).FirstOrDefault();
+            //ShiftAssignViewModel shiftAssignVM = _db.ShiftAssigns.Where(w => w.IsActive && w.Id == id).Select(s => new ShiftAssignViewModel
+            //{
+            //    Id = s.Id,
+            //    EmployeeId = s.EmployeeId,
+            //    ShiftId = s.ShiftId,
+            //    DepartmentId = s.DepartmentId,
+            //    FromDate = s.FromDate,
+            //    ToDate = s.ToDate               
+            //}).FirstOrDefault();
 
+            ShiftAssignViewModel shiftAssignVM = _shiftAssignService.GetById(id);
             if (shiftAssignVM is not null)
             {
-                shiftAssignVM.DepartmentViewModels = GetAllDepartment();
-                shiftAssignVM.ShiftViewModels = GetAllShift();
-                shiftAssignVM.EmployeeViewModels = GetAllEmployee();
+                shiftAssignVM.DepartmentViewModels = _departmentService.GetAll().ToList();
+                shiftAssignVM.ShiftViewModels = _shiftService.GetAll().ToList();
+                shiftAssignVM.EmployeeViewModels = _employeeService.GetAll().ToList();
+
+                //shiftAssignVM.DepartmentViewModels = GetAllDepartment();
+                //shiftAssignVM.ShiftViewModels = GetAllShift();
+                //shiftAssignVM.EmployeeViewModels = GetAllEmployee();
             }
             
             return View(shiftAssignVM);
         }
-
-        public async Task<IActionResult> update(ShiftAssignViewModel shiftAssignVM)
+        public IActionResult update(ShiftAssignViewModel shiftAssignVM)
         {
             try
             {
-                ShiftAssignEntity shiftAssignEntity = _db.ShiftAssigns.Where(w => w.IsActive && w.Id == shiftAssignVM.Id).FirstOrDefault();
-                if (shiftAssignEntity is not null)
-                {
-                    shiftAssignEntity.EmployeeId = shiftAssignVM.EmployeeId;
-                    shiftAssignEntity.ShiftId = shiftAssignVM.ShiftId;
-                    shiftAssignEntity.DepartmentId = shiftAssignVM.DepartmentId;
-                    shiftAssignEntity.UpdatedAt = DateTime.Now;
-                    shiftAssignEntity.UpdatedBy = "system";
-                    shiftAssignEntity.Ip = await NetworkHelper.GetIpAddressAsnyc();
+                //ShiftAssignEntity shiftAssignEntity = _db.ShiftAssigns.Where(w => w.IsActive && w.Id == shiftAssignVM.Id).FirstOrDefault();
+                //if (shiftAssignEntity is not null)
+                //{
+                //    shiftAssignEntity.EmployeeId = shiftAssignVM.EmployeeId;
+                //    shiftAssignEntity.ShiftId = shiftAssignVM.ShiftId;
+                //    shiftAssignEntity.DepartmentId = shiftAssignVM.DepartmentId;
+                //    shiftAssignEntity.UpdatedAt = DateTime.Now;
+                //    shiftAssignEntity.UpdatedBy = "system";
+                //    shiftAssignEntity.Ip = await NetworkHelper.GetIpAddressAsnyc();
 
-                    _db.ShiftAssigns.Update(shiftAssignEntity);
-                    _db.SaveChanges();
+                //    _db.ShiftAssigns.Update(shiftAssignEntity);
+                //    _db.SaveChanges();
 
-                    TempData["Msg"] = "Data has been updated successfully";
-                    TempData["IsErrorOccur"] = false;
-                }
+                //    TempData["Msg"] = "Data has been updated successfully";
+                //    TempData["IsErrorOccur"] = false;
+                //}
+                _shiftAssignService.Update(shiftAssignVM);
+
+                TempData["Msg"] = "Data has been updated successfully";
+                TempData["IsErrorOccur"] = false;
             }
             catch (Exception e)
             {
@@ -156,7 +180,8 @@ namespace HRMS.Web.Controllers
 
             return RedirectToAction("List");
         }
-        private IList<DepartmentViewModel> GetAllDepartment()
+
+        /*private IList<DepartmentViewModel> GetAllDepartment()
         {
 
             return _db.Departments.Where(w => w.IsActive).Select(s => new DepartmentViewModel
@@ -183,6 +208,6 @@ namespace HRMS.Web.Controllers
                 Code = s.Code,
                 Name = s.Name
             }).ToList();
-        }
+        }*/
     }
 }

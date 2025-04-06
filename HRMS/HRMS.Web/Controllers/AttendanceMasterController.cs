@@ -33,6 +33,16 @@ namespace HRMS.Web.Controllers
         [HttpPost]
         public IActionResult DayEndProcess(AttendanceMasterViewModel attMstrVM)
         {
+            try
+            {
+                _attMstrService.Delete(attMstrVM.AttendanceDate, attMstrVM.ToDate, attMstrVM.DepartmentId, attMstrVM.EmployeeId);
+                _attMstrService.DayEndProcess(attMstrVM);
+                ViewBag.Info = "successfully save a record to the system";
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Info = "Error occur when  saving a record  to the system";
+            }
             return RedirectToAction("List");
         }
     }

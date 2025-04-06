@@ -13,6 +13,7 @@
         public bool IsEarlyOut { get; set; }
         public bool IsLeave { get; set; }
 
+        public DateTime ToDate { get; set; }
         public string EmployeeInfo { get; set; }
         public string DepartmentInfo { get; set; }
         public string ShiftInfo { get; set; }
