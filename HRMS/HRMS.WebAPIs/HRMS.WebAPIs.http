@@ -1,0 +1,6 @@
+@HRMS.WebAPIs_HostAddress = http://localhost:5195
+
+GET {{HRMS.WebAPIs_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

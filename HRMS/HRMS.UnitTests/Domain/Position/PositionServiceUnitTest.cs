@@ -1,8 +1,8 @@
-﻿using HRMS.Web.Models.DataModels;
-using HRMS.Web.Models.ViewModels;
-using HRMS.Web.Repositories.Domain;
-using HRMS.Web.Services;
-using HRMS.Web.UnitOfWorks;
+﻿using HRMS.Domain.Models.DataModels;
+using HRMS.Domain.Models.ViewModels;
+using HRMS.Repositories.Domain;
+using HRMS.Services;
+using HRMS.UnitOfWorks;
 using Moq;
 using System;
 using System.Collections.Generic;

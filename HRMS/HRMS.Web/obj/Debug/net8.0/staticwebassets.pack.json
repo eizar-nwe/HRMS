@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\HRMS.Web.bundle.scp.css",
-      "PackagePath": "staticwebassets\\HRMS.Web.bundle.scp.css"
+      "PackagePath": "staticwebassets\\HRMS.Web.9fp09y0jrx.bundle.scp.css"
     },
     {
       "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\AdminLTE\\dist\\assets\\img\\AdminLTEFullLogo.png",
@@ -427,6 +427,10 @@
     {
       "Id": "D:\\EWAD7\\Project\\HRMS\\HRMS.Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HRMS.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HRMS.Web.Microsoft.AspNetCore.StaticWebAssets.props",

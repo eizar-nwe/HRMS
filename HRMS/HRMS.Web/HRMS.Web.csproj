@@ -7,6 +7,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DAO\**" />
+    <Compile Remove="Models\**" />
+    <Compile Remove="Repositories\**" />
+    <Compile Remove="Services\**" />
+    <Compile Remove="UnitOfWorks\**" />
+    <Compile Remove="Utilities\**" />
+    <Content Remove="DAO\**" />
+    <Content Remove="Models\**" />
+    <Content Remove="Repositories\**" />
+    <Content Remove="Services\**" />
+    <Content Remove="UnitOfWorks\**" />
+    <Content Remove="Utilities\**" />
+    <EmbeddedResource Remove="DAO\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Repositories\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <EmbeddedResource Remove="UnitOfWorks\**" />
+    <EmbeddedResource Remove="Utilities\**" />
+    <None Remove="DAO\**" />
+    <None Remove="Models\**" />
+    <None Remove="Repositories\**" />
+    <None Remove="Services\**" />
+    <None Remove="UnitOfWorks\**" />
+    <None Remove="Utilities\**" />
+  </ItemGroup>
+
+  <ItemGroup>
 	  
 	  <!--Library for EF Core-->
     <PackageReference Include="EPPlus" Version="7.6.1" />
@@ -25,6 +52,13 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
 	  	 
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HRMS.Domain\HRMS.Domain.csproj" />
+    <ProjectReference Include="..\HRMS.Repositories\HRMS.Repositories.csproj" />
+    <ProjectReference Include="..\HRMS.Services\HRMS.Services.csproj" />
+    <ProjectReference Include="..\HRMS.UnitOfWorks\HRMS.UnitOfWorks.csproj" />
   </ItemGroup>
 
 </Project>

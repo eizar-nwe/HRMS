@@ -9,6 +9,10 @@
       "HRMS.Web/1.0.0": {
         "dependencies": {
           "EPPlus": "7.6.1",
+          "HRMS.Domain": "1.0.0",
+          "HRMS.Repositories": "1.0.0",
+          "HRMS.Services": "1.0.0",
+          "HRMS.UnitOfWorks": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.13",
           "Microsoft.AspNetCore.Identity.UI": "8.0.13",
           "Microsoft.EntityFrameworkCore": "8.0.13",
@@ -2092,14 +2096,7 @@
           }
         }
       },
-      "System.Formats.Asn1/8.0.2": {
-        "runtime": {
-          "lib/net8.0/System.Formats.Asn1.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1325.6609"
-          }
-        }
-      },
+      "System.Formats.Asn1/8.0.2": {},
       "System.IdentityModel.Tokens.Jwt/6.35.0": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "6.35.0",
@@ -2252,6 +2249,63 @@
             "assetType": "runtime",
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "HRMS.Domain/1.0.0": {
+        "dependencies": {
+          "EPPlus": "7.6.1",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.13",
+          "Microsoft.AspNetCore.Identity.UI": "8.0.13",
+          "Microsoft.EntityFrameworkCore": "8.0.13",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.13",
+          "Microsoft.EntityFrameworkCore.Sqlite": "8.0.11",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7"
+        },
+        "runtime": {
+          "HRMS.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HRMS.Repositories/1.0.0": {
+        "dependencies": {
+          "HRMS.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.13",
+          "Microsoft.AspNetCore.Identity.UI": "8.0.13",
+          "Microsoft.EntityFrameworkCore": "8.0.13",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.13",
+          "Microsoft.EntityFrameworkCore.Sqlite": "8.0.11",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7"
+        },
+        "runtime": {
+          "HRMS.Repositories.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HRMS.Services/1.0.0": {
+        "dependencies": {
+          "HRMS.Domain": "1.0.0",
+          "HRMS.UnitOfWorks": "1.0.0"
+        },
+        "runtime": {
+          "HRMS.Services.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HRMS.UnitOfWorks/1.0.0": {
+        "dependencies": {
+          "HRMS.Repositories": "1.0.0"
+        },
+        "runtime": {
+          "HRMS.UnitOfWorks.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       }
@@ -3543,6 +3597,26 @@
       "sha512": "sha512-bR4qdCmssMMbo9Fatci49An5B1UaVJZHKNq70PRgzoLYIlitb8Tj7ns/Xt5Pz1CkERiTjcVBDU2y1AVrPBYkaw==",
       "path": "system.windows.extensions/7.0.0",
       "hashPath": "system.windows.extensions.7.0.0.nupkg.sha512"
+    },
+    "HRMS.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HRMS.Repositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HRMS.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HRMS.UnitOfWorks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

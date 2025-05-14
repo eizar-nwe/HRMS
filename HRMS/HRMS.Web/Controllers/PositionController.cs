@@ -1,8 +1,8 @@
-﻿using HRMS.Web.DAO;
-using HRMS.Web.Models.DataModels;
-using HRMS.Web.Models.ViewModels;
-using HRMS.Web.Services;
-using HRMS.Web.Utilities;
+﻿using HRMS.Domain.DAO;
+using HRMS.Domain.Models.DataModels;
+using HRMS.Domain.Models.ViewModels;
+using HRMS.Services;
+using HRMS.Domain.Utilities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;

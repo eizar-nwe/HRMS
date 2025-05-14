@@ -3201,6 +3201,71 @@
             "rid": "win"
           }
         }
+      },
+      "HRMS.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "EPPlus": "7.6.1",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.13",
+          "Microsoft.AspNetCore.Identity.UI": "8.0.13",
+          "Microsoft.EntityFrameworkCore": "8.0.13",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.13",
+          "Microsoft.EntityFrameworkCore.Sqlite": "8.0.11",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7"
+        },
+        "compile": {
+          "bin/placeholder/HRMS.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HRMS.Domain.dll": {}
+        }
+      },
+      "HRMS.Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "HRMS.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.13",
+          "Microsoft.AspNetCore.Identity.UI": "8.0.13",
+          "Microsoft.EntityFrameworkCore": "8.0.13",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.13",
+          "Microsoft.EntityFrameworkCore.Sqlite": "8.0.11",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7"
+        },
+        "compile": {
+          "bin/placeholder/HRMS.Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HRMS.Repositories.dll": {}
+        }
+      },
+      "HRMS.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "HRMS.Domain": "1.0.0",
+          "HRMS.UnitOfWorks": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HRMS.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HRMS.Services.dll": {}
+        }
+      },
+      "HRMS.UnitOfWorks/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "HRMS.Repositories": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HRMS.UnitOfWorks.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HRMS.UnitOfWorks.dll": {}
+        }
       }
     }
   },
@@ -8806,11 +8871,35 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "HRMS.Domain/1.0.0": {
+      "type": "project",
+      "path": "../HRMS.Domain/HRMS.Domain.csproj",
+      "msbuildProject": "../HRMS.Domain/HRMS.Domain.csproj"
+    },
+    "HRMS.Repositories/1.0.0": {
+      "type": "project",
+      "path": "../HRMS.Repositories/HRMS.Repositories.csproj",
+      "msbuildProject": "../HRMS.Repositories/HRMS.Repositories.csproj"
+    },
+    "HRMS.Services/1.0.0": {
+      "type": "project",
+      "path": "../HRMS.Services/HRMS.Services.csproj",
+      "msbuildProject": "../HRMS.Services/HRMS.Services.csproj"
+    },
+    "HRMS.UnitOfWorks/1.0.0": {
+      "type": "project",
+      "path": "../HRMS.UnitOfWorks/HRMS.UnitOfWorks.csproj",
+      "msbuildProject": "../HRMS.UnitOfWorks/HRMS.UnitOfWorks.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "EPPlus >= 7.6.1",
+      "HRMS.Domain >= 1.0.0",
+      "HRMS.Repositories >= 1.0.0",
+      "HRMS.Services >= 1.0.0",
+      "HRMS.UnitOfWorks >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.13",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.13",
       "Microsoft.EntityFrameworkCore >= 8.0.13",
@@ -8847,13 +8936,25 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\EWAD7\\Project\\HRMS\\HRMS.Domain\\HRMS.Domain.csproj": {
+              "projectPath": "D:\\EWAD7\\Project\\HRMS\\HRMS.Domain\\HRMS.Domain.csproj"
+            },
+            "D:\\EWAD7\\Project\\HRMS\\HRMS.Repositories\\HRMS.Repositories.csproj": {
+              "projectPath": "D:\\EWAD7\\Project\\HRMS\\HRMS.Repositories\\HRMS.Repositories.csproj"
+            },
+            "D:\\EWAD7\\Project\\HRMS\\HRMS.Services\\HRMS.Services.csproj": {
+              "projectPath": "D:\\EWAD7\\Project\\HRMS\\HRMS.Services\\HRMS.Services.csproj"
+            },
+            "D:\\EWAD7\\Project\\HRMS\\HRMS.UnitOfWorks\\HRMS.UnitOfWorks.csproj": {
+              "projectPath": "D:\\EWAD7\\Project\\HRMS\\HRMS.UnitOfWorks\\HRMS.UnitOfWorks.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -8865,7 +8966,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -8931,7 +9033,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

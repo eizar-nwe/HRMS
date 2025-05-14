@@ -1,6 +1,6 @@
-﻿using HRMS.Web.Models.DataModels;
-using HRMS.Web.Models.ViewModels;
-using HRMS.Web.Services;
+﻿using HRMS.Domain.Models.DataModels;
+using HRMS.Domain.Models.ViewModels;
+using HRMS.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HRMS.Web.Controllers

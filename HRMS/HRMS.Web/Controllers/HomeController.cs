@@ -1,5 +1,5 @@
-using HRMS.Web.Models;
-using HRMS.Web.Models.ViewModels;
+using HRMS.Domain.Models;
+using HRMS.Domain.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

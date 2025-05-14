@@ -1,10 +1,11 @@
-using HRMS.Web.DAO;
-using HRMS.Web.Repositories.Domain;
-using HRMS.Web.Services;
-using HRMS.Web.UnitOfWorks;
+using HRMS.Domain.DAO;
+using HRMS.Domain.Services;
+using HRMS.Services;
+using HRMS.UnitOfWorks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+
 
 var builder = WebApplication.CreateBuilder(args);
 //var connectionString = builder.Configuration.GetConnectionString("HRMSWebDbContextConnection") ?? throw new InvalidOperationException("Connection string 'HRMSWebDbContextConnection' not found.");
@@ -35,7 +36,6 @@ builder.Services.AddTransient<IShiftAssignService, ShiftAssignService>();
 builder.Services.AddTransient<IDailyAttendanceService, DailyAttendanceService>();
 builder.Services.AddTransient<IAttendanceMasterService, AttendanceMasterService>();
 builder.Services.AddTransient<IPayrollservice, PayrollService>();
-
 builder.Services.AddTransient<IUserService, UserService>();
 
 var app = builder.Build();

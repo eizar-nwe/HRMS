@@ -69,7 +69,6 @@ D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\System.Composition.Runtime.dll
 D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\System.Composition.TypedParts.dll
 D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\System.Drawing.Common.dll
-D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\System.Formats.Asn1.dll
 D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\System.Memory.Data.dll
 D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\System.Runtime.Caching.dll
@@ -300,3 +299,15 @@ D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStr
 D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\HRMS.Web.staticwebassets.endpoints.json
+D:\EWAD7\Project\HRMS\HRMS.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\EWAD7\Project\HRMS\HRMS.Web\obj\Debug\net8.0\staticwebassets\msbuild.HRMS.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\EWAD7\Project\HRMS\HRMS.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\HRMS.Domain.dll
+D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\HRMS.Repositories.dll
+D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\HRMS.UnitOfWorks.dll
+D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\HRMS.Domain.pdb
+D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\HRMS.Repositories.pdb
+D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\HRMS.UnitOfWorks.pdb
+D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\HRMS.Services.dll
+D:\EWAD7\Project\HRMS\HRMS.Web\bin\Debug\net8.0\HRMS.Services.pdb
